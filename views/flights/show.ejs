@@ -8,7 +8,21 @@
                   <li>Airport of Departure:  <%= flight.airport %></li>
                   <li>Departure time:  <%= flight.departs %></li>
   </ul>
-           
+  <br>
+  <ul> 
+    <li>
+    Tickets Sold: 
+  
+    <% let total = 0 %>
+    <% tickets.forEach(function(t) { %>
+      <% total += 1; %>
+      
+    <% }) %>
+    <%= total %>
+  
+  <a href="/flights/<%= flight._id %>/tickets/new"  >Add Tickets</a>
+    </li>
+  </ul>
 </section>
 <!-- new markup below -->
 <br><br><h2>Flight Destination</h2>
