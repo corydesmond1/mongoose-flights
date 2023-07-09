@@ -1,4 +1,27 @@
-<%- include('../partials/header')
-<p>Welcome to <%= title %></p>
+<%- include('../partials/header') %>
 
-<%- include('../partials/footer')
+<h2>Flight List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Airline</th>
+      <th>Flight Number</th>
+      <th>Airport</th>
+      <th>Depart Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% flights.forEach(function(f) { %>
+        <tr>
+            <td><%= f.airline %></td>
+            <td><%= f.flightNum %></td>
+            <td><%= f.airport %></td>
+            <td><%= f.departs %></td>
+            <td><a href="/flights/<%= f._id %>">Details</a></td>
+        </tr>
+   <% }); %>
+    <!-- Close the forEach using EJS here -->
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
